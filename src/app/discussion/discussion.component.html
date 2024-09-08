@@ -1,0 +1,10 @@
+<div *ngFor="let participant of participants">
+    <span>{{ participant.name }} ({{ participant.role }})</span>
+    <button *ngIf="isAdmin || participant.role !== 'judge'" (click)="muteParticipant(participant)">
+      {{ participant.isMuted ? 'Unmute' : 'Mute' }}
+    </button>
+  </div>
+  
+  <!-- הצגת כפתור להשתקת כל המשתתפים רק לשופט -->
+  <button *ngIf="isAdmin" (click)="muteAll()">Mute All</button>
+  

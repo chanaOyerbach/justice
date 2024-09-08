@@ -1,0 +1,5 @@
+<span>{{participant.name}} ({{participant.role}})</span>
+<button *ngIf="participant.role !== 'judge'" (click)="onMute()">
+  {{ participant.isMuted ? 'Unmute' : 'Mute' }}
+</button>
+
